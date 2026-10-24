@@ -1,0 +1,11 @@
+.env
+data/
+exports/
+__pycache__/
+.venv/
+vendor/
+probe.xml
+browser-check.cjs
+browser-steps.cjs
+build-rates-chart.cjs
+build-events-table.cjs

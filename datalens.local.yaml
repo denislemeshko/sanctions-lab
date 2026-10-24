@@ -1,0 +1,34 @@
+services:
+  ui:
+    ports: !override
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped
+  control-api:
+    networks:
+      - default
+      - research
+    restart: unless-stopped
+  data-api:
+    networks:
+      - default
+      - research
+    restart: unless-stopped
+  postgres:
+    restart: unless-stopped
+  us:
+    restart: unless-stopped
+  auth:
+    restart: unless-stopped
+  temporal:
+    restart: unless-stopped
+    healthcheck:
+      start_period: 120s
+      retries: 18
+  meta-manager:
+    restart: unless-stopped
+  ui-api:
+    restart: unless-stopped
+networks:
+  research:
+    external: true
+    name: sanctions-lab_default

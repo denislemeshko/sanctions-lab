@@ -1,0 +1,36 @@
+name: sanctions-lab
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: research
+      POSTGRES_USER: researcher
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Run setup.ps1 first}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U researcher -d research"]
+      interval: 5s
+      start_period: 120s
+      retries: 60
+  pipeline:
+    build: .
+    environment:
+      PGHOST: db
+      PGDATABASE: research
+      PGUSER: researcher
+      PGPASSWORD: ${DB_PASSWORD}
+      READER_PASSWORD: ${READER_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+      - ./exports:/app/exports
+      - ./events.csv:/app/events.csv:ro
+    restart: unless-stopped
+volumes:
+  pgdata:

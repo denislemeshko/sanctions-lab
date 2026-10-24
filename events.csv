@@ -1,0 +1,5 @@
+event_id,announcement_date,jurisdiction,category,action,title,source_url,review_status,effective_date
+us-2014-07-16,2014-07-16,US,finance_energy,new,US sectoral financial and energy sanctions,https://home.treasury.gov/news/press-releases/jl2572,source_verified,
+us-2014-09-12,2014-09-12,US,finance_energy_defense,expansion,US financial defense and energy restrictions,https://home.treasury.gov/news/press-releases/jl2630,source_verified,
+eu-2014-07-29,2014-07-29,EU,sectoral,new,EU agreement on sectoral economic sanctions,https://www.consilium.europa.eu/en/policies/sanctions-against-russia/timeline-sanctions-against-russia/,source_verified,
+eu-2024-06-24,2024-06-24,EU,energy_trade,expansion,EU fourteenth sanctions package,https://www.consilium.europa.eu/en/policies/sanctions-against-russia/timeline-sanctions-against-russia/,source_verified,

@@ -1,0 +1,6 @@
+.env
+data
+exports
+.venv
+vendor
+__pycache__
