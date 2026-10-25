@@ -8,7 +8,7 @@ services:
       POSTGRES_USER: researcher
       POSTGRES_PASSWORD: ${DB_PASSWORD:?Run setup.ps1 first}
     ports:
-      - "127.0.0.1:55432:5432"
+      - "127.0.0.1:55433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:

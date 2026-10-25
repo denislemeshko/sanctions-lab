@@ -29,7 +29,7 @@ SSL: выключен (локальная Docker network)
 
 Администратор исследовательской базы PostgreSQL:
 Хост с ноутбука: localhost
-Порт с ноутбука: 55432
+Порт с ноутбука: 55433
 База: research
 Пользователь: researcher
 Пароль: $databaseSecret

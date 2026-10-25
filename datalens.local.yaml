@@ -15,6 +15,10 @@ services:
     restart: unless-stopped
   postgres:
     restart: unless-stopped
+    healthcheck:
+      start_period: 600s
+      interval: 5s
+      retries: 60
   us:
     restart: unless-stopped
   auth:
